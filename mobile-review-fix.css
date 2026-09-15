@@ -1,0 +1,91 @@
+/* Movie Cinamax mobile review + quick-picks layout fix */
+@media (max-width: 900px){
+  .details-content>.review-panel,
+  .details-content>.series-area{max-width:none;width:100%;box-sizing:border-box}
+  .details-side-widget{
+    display:block;
+    position:relative;
+    top:auto;right:auto;
+    width:100%;
+    box-sizing:border-box;
+    margin:28px 0 0;
+    padding:16px;
+  }
+  .details-side-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+}
+@media (max-width:700px){
+  .details-content{padding:96px 14px 44px}
+  .details-top{gap:22px}
+  .details-poster-wrap{width:min(220px,68vw)}
+  .details-info{min-width:0;width:100%}
+  .details-info h1{
+    font-size:clamp(32px,10vw,43px);
+    line-height:1.02;
+    letter-spacing:-1.5px;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+  .details-meta{font-size:12px;gap:6px;line-height:1.5}
+  .details-description{font-size:14px;line-height:1.75;margin-top:14px}
+  .content-note{font-size:10px;line-height:1.65}
+  .detail-actions{gap:8px}
+  .detail-actions button{min-height:44px;max-width:100%;font-size:12px}
+  .review-panel{
+    margin-top:24px;
+    padding:20px 17px;
+    border-radius:16px;
+    width:100%;
+    box-sizing:border-box;
+  }
+  .review-kicker{font-size:9px;letter-spacing:1.8px;line-height:1.5}
+  .review-title{font-size:22px;line-height:1.2}
+  .review-rating{gap:7px;flex-wrap:wrap;font-size:11px;margin-bottom:14px}
+  .review-rating strong{font-size:20px}
+  .review-stars{letter-spacing:1px}
+  .review-text{
+    font-size:13px;
+    line-height:1.8;
+    max-width:none;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+  .review-verdict{font-size:11px;margin-top:16px}
+  .details-side-widget{
+    margin-top:18px;
+    padding:14px;
+    border-radius:15px;
+  }
+  .side-widget-head{margin-bottom:6px}
+  .side-widget-note{font-size:10px;margin-bottom:10px}
+  .details-side-list{
+    display:flex;
+    overflow-x:auto;
+    gap:9px;
+    padding-bottom:5px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .details-side-list::-webkit-scrollbar{display:none}
+  .details-side-item{
+    flex:0 0 180px;
+    grid-template-columns:50px minmax(0,1fr);
+    min-width:180px;
+    padding:7px;
+  }
+  .details-side-item img{width:50px;height:68px}
+  .details-side-item strong{font-size:10px;overflow-wrap:anywhere}
+  .details-side-item small{font-size:8px}
+  .series-area{padding:17px;margin-top:22px}
+}
+
+/* Mobile video player reliability fix */
+body.video-open{overflow:hidden}
+#videoFrame,#nativeVideo{width:100%;height:100%;border:0;background:#000}
+#nativeVideo{display:none;object-fit:contain}
+@media(max-width:700px){
+  #videoModal{position:fixed;inset:0;padding:0;background:#000;align-items:center;justify-content:center;z-index:5000;overscroll-behavior:none}
+  .video-container{width:100vw;height:100dvh;max-width:none;aspect-ratio:auto;border-radius:0;overflow:hidden;background:#000;box-shadow:none}
+  #videoFrame,#nativeVideo{width:100%;height:100%;min-width:0;min-height:0;display:block}
+  #nativeVideo{object-fit:contain}
+  .close-video{right:10px;top:max(10px,env(safe-area-inset-top));width:42px;height:42px;font-size:18px;background:rgba(0,0,0,.72);border-color:rgba(255,255,255,.3)}
+}
